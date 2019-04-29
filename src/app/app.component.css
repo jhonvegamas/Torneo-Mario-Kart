@@ -1,0 +1,23 @@
+ul{
+    margin-right: 1%;
+}
+nav {
+    background-color: #E60012;
+}
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+.img-nav {
+    margin-left: 2%;
+}
+.brand-logo{
+    font-weight: bold;
+}
+.login .img-login {
+    margin-bottom: -18px;
+}
+
