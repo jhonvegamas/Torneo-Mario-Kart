@@ -1,0 +1,20 @@
+.card.horizontal .card-image img {
+    margin-top: 15%;
+    margin-left: 20%;
+    width: 71%;
+    margin-bottom: 5%;
+}
+.btn.rounded {
+    border-radius:30px;
+}
+.social {
+    margin-top: 3px;
+    margin-bottom: 8px !important;
+    margin-right: 5%;
+}
+.row.social {
+    margin-left: 8%;
+}
+.row {
+    margin-bottom: 0;
+}

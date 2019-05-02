@@ -1,0 +1,60 @@
+<div class="had-container">
+    <div class="parallax-container">
+        <div class="row"><br>
+            <div class="col m10 s10 offset-m4 offset-s4 center">
+                <div class="col s12 m7">
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <img src="assets/img/bowser_cart2.png" alt="">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <p>Inicia sesión con tu cuenta <b>TMK</b> o crea una cuenta nueva..</p>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="email" type="text" [(ngModel)]="user.email" class="validate">
+                                        <label class="active" for="email">Correo</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="password" type="password" [(ngModel)]="user.password" class="validate">
+                                        <label class="active" for="password">Contraseña</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button (click)="login()" class="btn rounded waves-effect waves-light red" type="submit"
+                                            name="action">
+                                        Iniciar sesión
+                                    </button>
+                                </div>
+                                <div class="row">
+                                    <a>¿Has olvidado la contraseña? </a>
+                                </div>
+                                <div class="row social">
+                                    <a class="social waves-effect waves-light btn-floating btn social facebook blue">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a class="social waves-effect waves-light btn-floating social google blue-grey">
+                                        <i class="fa fa-google"></i>
+                                    </a>
+                                </div>
+                                <div class="register">
+                                    <div class="row no-cuenta">
+                                        <span class="center">¿No tienes una cuenta?</span>
+                                    </div>
+                                    <div class="row">
+                                        <a routerLink="/registro" class="btn rounded waves-effect waves-light white black-text" type="submit">
+                                            Crear una cuenta
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{user| json}}

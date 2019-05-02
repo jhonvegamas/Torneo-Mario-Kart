@@ -1,18 +1,76 @@
-<nav>
-    <div class="nav-wrapper">
-        <img class="img-nav" width="60" src="assets/img/toad_th.png"
-             alt="Toad" title="Toad">
-        <a routerLink="/" class="brand-logo">Torneos Mario Kart</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li>
-                <a class="waves-effect waves-light btn-small center valign-wrapper login">
-                    <img width="50" src="assets/img/mario_profile.png"
-                         alt="Mario" title="Mario" class="circle responsive-img img-login">
-                    Iniciar Sesión
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<header>
+    <nav  role="navigation">
+        <div class="nav-wrapper red">
+            <img class="img-nav" width="60" src="assets/img/toad_th.png"
+                 alt="Toad" title="Toad">
+            <a routerLink="/" class="brand-logo">{{title}}</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li *ngIf="!authService.user.email" [ngClass]="{'active': router.url == '/ingreso'}">
+                    <a routerLink="ingreso" class="waves-effect waves-light btn-small center valign-wrapper login">
+                        <img width="50" src="assets/img/mario_profile.png"
+                             alt="Mario" title="Mario" class="circle responsive-img img-login">
+                        Iniciar Sesión
+                    </a>
+                </li>
+                <li *ngIf="authService.user.email">
+                    <a class="dropdown-button" data-activates="profile" data-beloworigin="true" href="javascript:;">
+                        {{authService.user.email}}
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                    <ul id="profile" class="dropdown-content red">
+                        <li><a class="white-text">Ver Perfil</a></li>
+                        <li><a (click)="authService.closeSession()" class="white-text">Cerrar Sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
 <router-outlet></router-outlet>
+
+<footer class="page-footer red accent-2">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Torneos Mario Kart</h5>
+                <p class="grey-text text-lighten-4">Sistema para realizar torneos de Mario Kart.</p>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Juegos</h5>
+                <li>
+                    <a class="white-text" target="_blank" href="https://pivigames.blog/mario-kart-8/">
+                        Descargar Mario Kart 8
+                    </a>
+                </li>
+                <li>
+                    <a class="white-text" target="_blank" href="http://www.juegosyroms.com/pages/roms/nintendo-64/mario-kart-64.php">
+                        Room Mario Kart 64
+                    </a>
+                </li>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Conectar</h5>
+                <li>
+                    <a class="white-text" target="_blank" href="https://mariokart8.nintendo.com/es/">
+                        Mario Kart 8
+                    </a>
+                </li>
+                <li>
+                    <a class="white-text" target="_blank" href="http://cemu.info/">
+                        Cemu - Wii U Emulator
+                    </a>
+                </li><li>
+                <a class="white-text" target="_blank" href="https://www.pj64-emu.com/">
+                    Project 64 Emulator
+                </a>
+            </li>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            Made by <a class="white-text text-lighten-3" target="_blank" href="https://github.com/jhonvegamas">jhonvegamas@gmail.com</a>
+        </div>
+    </div>
+</footer>
